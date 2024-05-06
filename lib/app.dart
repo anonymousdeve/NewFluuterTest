@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routing/routes.dart';
-import 'core/thiming/app_colors.dart';
+import 'core/theming/app_colors.dart';
 
 class App extends StatelessWidget {
   final AppRouter appRouter;
@@ -13,7 +13,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(415, 900),
       minTextAdapt: true,
       child: MaterialApp(
         title: "App",
