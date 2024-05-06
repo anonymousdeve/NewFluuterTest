@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routing/routes.dart';
-import 'core/thiming/app_colors.dart';
+import 'core/theming/app_colors.dart';
 
 class App extends StatelessWidget {
   final AppRouter appRouter;
@@ -19,7 +19,7 @@ class App extends StatelessWidget {
         title: "App",
         theme: ThemeData(primaryColor: AppColors.mainOrange),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: Routes.loginScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
