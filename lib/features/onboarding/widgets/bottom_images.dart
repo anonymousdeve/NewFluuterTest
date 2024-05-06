@@ -1,6 +1,6 @@
 import 'package:advanced_test/core/helpers/navigation_ext.dart';
 import 'package:advanced_test/core/routing/routes.dart';
-import 'package:advanced_test/core/thiming/app_colors.dart';
+import 'package:advanced_test/core/theming/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
