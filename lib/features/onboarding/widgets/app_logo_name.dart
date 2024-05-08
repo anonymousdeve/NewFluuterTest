@@ -23,7 +23,7 @@ class AppLogoAndName extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(36.w))),
             child: Padding(
               padding: EdgeInsets.all(8.w),
-              child: SvgPicture.asset("assets/svg/logo.svg"),
+              child: Image.asset("assets/images/appLogo.png"),
             ),
           ),
           SizedBox(

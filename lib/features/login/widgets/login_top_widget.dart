@@ -34,7 +34,7 @@ class TopLoginWidget extends StatelessWidget {
               child: SizedBox(
                 width: 98.w,
                 height: 98.h,
-                child: SvgPicture.asset("assets/svg/logo.svg"),
+                child: Image.asset("assets/images/appLogo.png"),
               ),
             ),
           ),
