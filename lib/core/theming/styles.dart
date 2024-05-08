@@ -8,4 +8,9 @@ class TextStyles {
       fontWeight: FontWeight.bold,
       fontFamily: 'SFProRounded',
       color: AppColors.textOnScreen);
+  static TextStyle font14Weight400 = TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400,
+      fontFamily: 'SFProRounded',
+      color: AppColors.textOnScreen);
 }

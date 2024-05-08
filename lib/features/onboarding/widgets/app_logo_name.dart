@@ -2,7 +2,6 @@ import 'package:advanced_test/core/theming/app_colors.dart';
 import 'package:advanced_test/core/theming/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class AppLogoAndName extends StatelessWidget {
   const AppLogoAndName({super.key});

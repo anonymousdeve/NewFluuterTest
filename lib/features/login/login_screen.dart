@@ -10,7 +10,7 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.gray,
+      backgroundColor: AppColors.mainScreenColorDarker,
       body: SingleChildScrollView(
         child: Column(
           children: [
