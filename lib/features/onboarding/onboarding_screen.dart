@@ -1,7 +1,6 @@
 import 'package:advanced_test/core/theming/app_colors.dart';
 import 'package:advanced_test/features/onboarding/widgets/app_logo_name.dart';
 import 'package:advanced_test/features/onboarding/widgets/bottom_images.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

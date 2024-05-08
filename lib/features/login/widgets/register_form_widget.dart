@@ -3,15 +3,16 @@ import 'package:advanced_test/core/widgets/app_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginFormWidget extends StatefulWidget {
-  const LoginFormWidget({super.key});
+class RegisterFormWidget extends StatefulWidget {
+  const RegisterFormWidget({super.key});
 
   @override
-  State<LoginFormWidget> createState() => _LoginFormWidgetState();
+  State<RegisterFormWidget> createState() => _RegisterFormWidgetState();
 }
 
-class _LoginFormWidgetState extends State<LoginFormWidget> {
+class _RegisterFormWidgetState extends State<RegisterFormWidget> {
   bool showPassword = false;
+  bool showRePassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +30,22 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                 }
                 return null;
               },
+              hintText: 'User name',
+            ),
+            SizedBox(
+              height: 12.h,
+            ),
+            AppTextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your email';
+                }
+                return null;
+              },
               hintText: 'Email address',
             ),
             SizedBox(
-              height: 64.h,
+              height: 12.h,
             ),
             AppTextFormField(
               validator: (value) {
@@ -43,26 +56,45 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               },
               hintText: 'Password',
               isObscureText: showPassword,
-              suffixIcon: GestureDetector(onTap: () {
-                setState(() {
-                  showPassword = !showPassword;
-                });
-              },
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    showPassword = !showPassword;
+                  });
+                },
                 child: Icon(
-                    showPassword ? Icons.visibility : Icons.visibility_off,color: AppColors.mainOrange,),),
-            ),
-            SizedBox(
-              height: 24.h,
-            ),
-            Text(
-              "Forgot passcode?",
-              style: TextStyle(
+                  showPassword ? Icons.visibility : Icons.visibility_off,
                   color: AppColors.mainOrange,
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.bold),
+                ),
+              ),
             ),
             SizedBox(
-              height: 150.h,
+              height: 12.h,
+            ),
+            AppTextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your password confirm';
+                }
+                return null;
+              },
+              hintText: 'Re-Password',
+              isObscureText: showRePassword,
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    showRePassword = !showRePassword;
+                  });
+                },
+                child: Icon(
+                  showRePassword ? Icons.visibility : Icons.visibility_off,
+                  color: AppColors.mainOrange,
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: 60.h,
             ),
             SizedBox(
               width: .8.sw,
@@ -73,9 +105,9 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateColor.resolveWith(
-                            (states) => AppColors.mainOrange)),
+                        (states) => AppColors.mainOrange)),
                 child: const Text(
-                  'Login',
+                  'Create New Account',
                   style: TextStyle(
                       color: AppColors.textOnScreen,
                       fontWeight: FontWeight.bold),
