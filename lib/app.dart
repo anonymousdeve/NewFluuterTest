@@ -19,7 +19,7 @@ class App extends StatelessWidget {
         title: "App",
         theme: ThemeData(primaryColor: AppColors.mainOrange),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.loginScreen,
+        initialRoute: Routes.onBoardingScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
