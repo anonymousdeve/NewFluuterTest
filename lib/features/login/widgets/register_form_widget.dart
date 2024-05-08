@@ -94,7 +94,7 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
             ),
 
             SizedBox(
-              height: 60.h,
+              height: 104.h,
             ),
             SizedBox(
               width: .8.sw,
