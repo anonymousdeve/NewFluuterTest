@@ -64,7 +64,8 @@ class _TopLoginWidgetState extends State<TopLoginWidget> {
                         widget.callBack(isLogin);
                       });
                     },
-                    child: SizedBox(
+                    child: Container(
+                      height: 56.h,
                       width: .3.sw,
                       child: Column(
                         children: [
@@ -101,6 +102,7 @@ class _TopLoginWidgetState extends State<TopLoginWidget> {
                       });
                     },
                     child: SizedBox(
+                      height: 56.h,
                       width: .4.sw,
                       child: Column(
                         children: [
