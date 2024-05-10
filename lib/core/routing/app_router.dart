@@ -1,4 +1,5 @@
 import 'package:advanced_test/core/routing/routes.dart';
+import 'package:advanced_test/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/login/login_screen.dart';
@@ -12,6 +13,9 @@ class AppRouter {
 
       case Routes.loginScreen:
         return MaterialPageRoute(builder: (_) => const AuthScreen());
+
+      case Routes.homeScreen:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
 
       default:
         return MaterialPageRoute(

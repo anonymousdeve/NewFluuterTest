@@ -1,3 +1,6 @@
+import 'package:advanced_test/core/helpers/navigation_ext.dart';
+import 'package:advanced_test/core/routing/app_router.dart';
+import 'package:advanced_test/core/routing/routes.dart';
 import 'package:advanced_test/core/theming/app_colors.dart';
 import 'package:advanced_test/core/widgets/app_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -43,13 +46,17 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               },
               hintText: 'Password',
               isObscureText: showPassword,
-              suffixIcon: GestureDetector(onTap: () {
-                setState(() {
-                  showPassword = !showPassword;
-                });
-              },
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    showPassword = !showPassword;
+                  });
+                },
                 child: Icon(
-                    showPassword ? Icons.visibility : Icons.visibility_off,color: AppColors.mainOrange,),),
+                  showPassword ? Icons.visibility : Icons.visibility_off,
+                  color: AppColors.mainOrange,
+                ),
+              ),
             ),
             SizedBox(
               height: 24.h,
@@ -70,10 +77,11 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               child: ElevatedButton(
                 onPressed: () {
                   // Perform login logic here
+                  context.pushNamed(Routes.homeScreen);
                 },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateColor.resolveWith(
-                            (states) => AppColors.mainOrange)),
+                        (states) => AppColors.mainOrange)),
                 child: const Text(
                   'Login',
                   style: TextStyle(
