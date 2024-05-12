@@ -1,3 +1,5 @@
+import 'package:advanced_test/core/helpers/navigation_ext.dart';
+import 'package:advanced_test/core/routing/routes.dart';
 import 'package:advanced_test/core/theming/app_colors.dart';
 import 'package:advanced_test/features/home/home.dart';
 import 'package:advanced_test/features/home/widgets/side_menu.dart';
@@ -81,24 +83,41 @@ class _HomeScreenState extends State<HomeScreen>
           AnimatedPositioned(
             duration: const Duration(milliseconds: 200),
             curve: Curves.fastOutSlowIn,
-            left: isSideBarOpen ? .7.sw : 12.w,
-            top: 32.h,
-            child: GestureDetector(
-              onTap: () {
-                isSideBarOpen = !isSideBarOpen;
-                if (isSideBarOpen) {
-                  _animationController.forward();
-                } else {
-                  _animationController.reverse();
-                }
-              },
-              child: SizedBox(
-                width: 32.w,
-                height: 32.h,
-                child: !isSideBarOpen
-                    ? SvgPicture.asset('assets/svg/ic_closed_menu.svg'):
-                SvgPicture.asset('assets/svg/ic_opened_menu.svg')
-                  ,
+            left: isSideBarOpen ? .7.sw : 32.w,
+            top: 72.h,
+            child: SizedBox(
+              width: .85.sw,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      isSideBarOpen = !isSideBarOpen;
+                      if (isSideBarOpen) {
+                        _animationController.forward();
+                      } else {
+                        _animationController.reverse();
+                      }
+                    },
+                    child: SizedBox(
+                      width: 24.w,
+                      height: 32.h,
+                      child: !isSideBarOpen
+                          ? SvgPicture.asset('assets/svg/ic_closed_menu.svg')
+                          : SvgPicture.asset('assets/svg/ic_opened_menu.svg'),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      context.pushNamed(Routes.cartScreen);
+                    },
+                    child: SizedBox(
+                      width: 32.w,
+                      height: 32.h,
+                      child: SvgPicture.asset('assets/svg/ic_cart.svg'),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
