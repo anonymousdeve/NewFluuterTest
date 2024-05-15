@@ -40,7 +40,7 @@ Widget menuItem(
               ),
               title: Text(
                 title,
-                style: TextStyles.font14Weight400.copyWith(
+                style: TextStyles.font16Weight400.copyWith(
                     color:
                         isActive ? AppColors.mainOrange : AppColors.textOnScreen,
                     fontWeight: FontWeight.bold),
