@@ -2,10 +2,9 @@ import 'dart:math';
 
 import 'package:advanced_test/core/theming/app_colors.dart';
 import 'package:advanced_test/core/theming/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lorem_ipsum/lorem_ipsum.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -216,14 +215,30 @@ class _HomeState extends State<Home> {
                                             height: 12.h,
                                           ),
                                           Text(
-                                            "${(index + 1) * Random().nextInt(
-                                                ((categories.length - index)
-                                                    .abs() + 1)) * 25}  Le",
+                                            "${ (Random().nextDouble()*200).toStringAsFixed(2)}  Le",
                                             textAlign: TextAlign.center,
                                             style: TextStyles
                                                 .font16Weight600
                                                 .copyWith(
                                               color: AppColors.mainOrange,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 12.h,
+                                          ),
+                                          Padding(
+                                            padding:  EdgeInsets.only(left: 12.w,right: 12.w),
+                                            child: SizedBox(
+                                              width: 180.w,
+                                              child: Text(
+                                                loremIpsum(words: 4),
+                                                textAlign: TextAlign.center,
+                                                style: TextStyles
+                                                    .font14Weight400
+                                                    .copyWith(
+                                                  color: AppColors.gray,
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ],
