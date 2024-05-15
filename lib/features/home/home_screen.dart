@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen>
   late AnimationController _animationController;
   late Animation<double> scaleAnimation;
   late Animation<double> animation;
+  int selectedPos = 0;
 
   @override
   void initState() {
@@ -121,7 +122,141 @@ class _HomeScreenState extends State<HomeScreen>
               ),
             ),
           ),
+          bottomWidget()
         ],
+      ),
+    );
+  }
+
+  Widget bottomWidget() {
+    return AnimatedPositioned(
+      duration: const Duration(milliseconds: 200),
+      curve: Curves.fastOutSlowIn,
+      left: isSideBarOpen ? 1.sw : 32.w,
+      bottom: 32.h,
+      child: SizedBox(
+        width: .85.sw,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedPos = 0;
+                });
+              },
+              child: AnimatedContainer(
+                duration: const Duration(seconds: 10),
+                decoration: selectedPos == 0
+                    ? BoxDecoration(boxShadow: [
+                        BoxShadow(
+                          color: AppColors.mainOrange.withOpacity(0.05),
+                          spreadRadius: 20,
+                          // Adjust the spread radius of the shadow
+                          blurRadius: 8,
+                          // Adjust the blur radius of the shadow
+                          offset: const Offset(
+                              0, .5), // Adjust the offset of the shadow
+                        ),
+                      ])
+                    : null,
+                child: selectedPos == 0
+                    ? const Icon(
+                        Icons.home,
+                        color: AppColors.mainOrange,
+                      )
+                    : const Icon(Icons.home_outlined),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedPos = 1;
+                });
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                decoration: selectedPos == 1
+                    ? BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    color: AppColors.mainOrange.withOpacity(0.05),
+                    spreadRadius: 8.w,
+                    // Adjust the spread radius of the shadow
+                    blurRadius: 2,
+                    // Adjust the blur radius of the shadow
+                    offset: const Offset(
+                        0, .2), // Adjust the offset of the shadow
+                  ),
+                ])
+                    : null,
+                child: selectedPos == 1
+                    ? const Icon(
+                        Icons.favorite,
+                        color: AppColors.mainOrange,
+                      )
+                    : const Icon(Icons.favorite_border),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedPos = 2;
+                });
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                decoration: selectedPos == 2
+                    ? BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    color: AppColors.mainOrange.withOpacity(0.05),
+                    spreadRadius: 8.w,
+                    // Adjust the spread radius of the shadow
+                    blurRadius: 2,
+                    // Adjust the blur radius of the shadow
+                    offset: const Offset(
+                        0, .2), // Adjust the offset of the shadow
+                  ),
+                ])
+                    : null,
+                child: selectedPos == 2
+                    ? const Icon(
+                        Icons.person,
+                        color: AppColors.mainOrange,
+                      )
+                    : const Icon(Icons.person_2_outlined),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedPos = 3;
+                });
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                decoration: selectedPos == 3
+                    ? BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    color: AppColors.mainOrange.withOpacity(0.05),
+                    spreadRadius: 8.w,
+                    // Adjust the spread radius of the shadow
+                    blurRadius: 2.w,
+                    // Adjust the blur radius of the shadow
+                    offset: const Offset(
+                        0, .2), // Adjust the offset of the shadow
+                  ),
+                ])
+                    : null,
+                child: selectedPos == 3
+                    ? const Icon(
+                        Icons.history_outlined,
+                        color: AppColors.mainOrange,
+                      )
+                    : const Icon(Icons.history_toggle_off),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
