@@ -28,6 +28,16 @@ class TextStyles {
       fontWeight: FontWeight.w600,
       fontFamily: 'SFProRounded',
       color: AppColors.textOnScreen);
+  static TextStyle font18Weight600 = TextStyle(
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w400,
+      fontFamily: 'SFProRounded',
+      color: AppColors.textOnScreen);
+  static TextStyle font28Weight600 = TextStyle(
+      fontSize: 28.sp,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'SFProRounded',
+      color: AppColors.textOnScreen);
   static TextStyle font16Weight600 = TextStyle(
       fontSize: 16.sp,
       fontWeight: FontWeight.w600,

@@ -1,7 +1,7 @@
-
 import 'package:advanced_test/core/helpers/static_data.dart';
 import 'package:advanced_test/core/theming/app_colors.dart';
 import 'package:advanced_test/core/theming/styles.dart';
+import 'package:advanced_test/domain/food_item_module.dart';
 import 'package:advanced_test/features/home/widgets/food_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -141,11 +141,11 @@ class _HomeState extends State<Home> {
                       // Using ListView.builder
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: 8,
+                        itemCount: foodItems.sublist(0, 8).length,
                         itemBuilder: (BuildContext ctx, index) {
                           return index < 7
                               ? FoodItem(
-                                  index: index,
+                                  item: foodItems[index],
                                 )
                               : GestureDetector(
                                   onTap: () {},

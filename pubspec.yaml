@@ -45,6 +45,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   # for generate random text easily, quickly and dynamically.
   lorem_ipsum: any
+ 
 dev_dependencies:
   flutter_test:
     sdk: flutter
