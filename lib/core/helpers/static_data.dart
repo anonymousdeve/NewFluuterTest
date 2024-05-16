@@ -10,6 +10,7 @@ List mainCat = [
   "Beef"
 ];
 
-List images = List.generate(7, (index) => "assets/images/foodImage$index.png");
+List<String> images =
+    List.generate(9, (index) => "assets/images/foodImage$index.png");
 final List categories =
-List.generate(10, (index) => mainCat[Random().nextInt(mainCat.length)]);
+    List.generate(10, (index) => mainCat[Random().nextInt(mainCat.length)]);

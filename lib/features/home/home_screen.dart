@@ -1,8 +1,10 @@
 import 'package:advanced_test/core/helpers/navigation_ext.dart';
 import 'package:advanced_test/core/routing/routes.dart';
 import 'package:advanced_test/core/theming/app_colors.dart';
+import 'package:advanced_test/domain/food_item_module.dart';
 import 'package:advanced_test/features/home/home.dart';
 import 'package:advanced_test/features/home/widgets/side_menu.dart';
+import 'package:advanced_test/features/item/item_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -178,16 +180,16 @@ class _HomeScreenState extends State<HomeScreen>
                 duration: const Duration(milliseconds: 200),
                 decoration: selectedPos == 1
                     ? BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: AppColors.mainOrange.withOpacity(0.05),
-                    spreadRadius: 8.w,
-                    // Adjust the spread radius of the shadow
-                    blurRadius: 2,
-                    // Adjust the blur radius of the shadow
-                    offset: const Offset(
-                        0, .2), // Adjust the offset of the shadow
-                  ),
-                ])
+                        BoxShadow(
+                          color: AppColors.mainOrange.withOpacity(0.05),
+                          spreadRadius: 8.w,
+                          // Adjust the spread radius of the shadow
+                          blurRadius: 2,
+                          // Adjust the blur radius of the shadow
+                          offset: const Offset(
+                              0, .2), // Adjust the offset of the shadow
+                        ),
+                      ])
                     : null,
                 child: selectedPos == 1
                     ? const Icon(
@@ -207,16 +209,16 @@ class _HomeScreenState extends State<HomeScreen>
                 duration: const Duration(milliseconds: 200),
                 decoration: selectedPos == 2
                     ? BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: AppColors.mainOrange.withOpacity(0.05),
-                    spreadRadius: 8.w,
-                    // Adjust the spread radius of the shadow
-                    blurRadius: 2,
-                    // Adjust the blur radius of the shadow
-                    offset: const Offset(
-                        0, .2), // Adjust the offset of the shadow
-                  ),
-                ])
+                        BoxShadow(
+                          color: AppColors.mainOrange.withOpacity(0.05),
+                          spreadRadius: 8.w,
+                          // Adjust the spread radius of the shadow
+                          blurRadius: 2,
+                          // Adjust the blur radius of the shadow
+                          offset: const Offset(
+                              0, .2), // Adjust the offset of the shadow
+                        ),
+                      ])
                     : null,
                 child: selectedPos == 2
                     ? const Icon(
@@ -236,16 +238,16 @@ class _HomeScreenState extends State<HomeScreen>
                 duration: const Duration(milliseconds: 200),
                 decoration: selectedPos == 3
                     ? BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: AppColors.mainOrange.withOpacity(0.05),
-                    spreadRadius: 8.w,
-                    // Adjust the spread radius of the shadow
-                    blurRadius: 2.w,
-                    // Adjust the blur radius of the shadow
-                    offset: const Offset(
-                        0, .2), // Adjust the offset of the shadow
-                  ),
-                ])
+                        BoxShadow(
+                          color: AppColors.mainOrange.withOpacity(0.05),
+                          spreadRadius: 8.w,
+                          // Adjust the spread radius of the shadow
+                          blurRadius: 2.w,
+                          // Adjust the blur radius of the shadow
+                          offset: const Offset(
+                              0, .2), // Adjust the offset of the shadow
+                        ),
+                      ])
                     : null,
                 child: selectedPos == 3
                     ? const Icon(
