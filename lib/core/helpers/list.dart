@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 extension ShuffleList<T> on List<T> {
   List<T> shuffled() {
     List<T> newList = List.of(this); // Create a copy of the original list
@@ -5,3 +7,4 @@ extension ShuffleList<T> on List<T> {
     return newList; // Return the shuffled list
   }
 }
+

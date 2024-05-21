@@ -8,11 +8,19 @@ class TextStyles {
       fontWeight: FontWeight.bold,
       fontFamily: 'SFProRounded',
       color: AppColors.textOnScreen);
+
   static TextStyle font16Weight400 = TextStyle(
       fontSize: 16.sp,
       fontWeight: FontWeight.w400,
       fontFamily: 'SFProRounded',
       color: AppColors.textOnScreen);
+
+  static TextStyle font14Weight600 = TextStyle(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'SFProRounded',
+      color: AppColors.textOnScreen);
+
   static TextStyle font12Weight400 = TextStyle(
       fontSize: 12.sp,
       fontWeight: FontWeight.w400,
@@ -23,11 +31,19 @@ class TextStyles {
       fontWeight: FontWeight.w400,
       fontFamily: 'SFProRounded',
       color: AppColors.textOnScreen);
+
   static TextStyle font22Weight600 = TextStyle(
       fontSize: 22.sp,
       fontWeight: FontWeight.w600,
       fontFamily: 'SFProRounded',
       color: AppColors.textOnScreen);
+
+  static TextStyle font22Weight400 = TextStyle(
+      fontSize: 22.sp,
+      fontWeight: FontWeight.w400,
+      fontFamily: 'SFProRounded',
+      color: AppColors.textOnScreen);
+
   static TextStyle font18Weight600 = TextStyle(
       fontSize: 18.sp,
       fontWeight: FontWeight.w400,
@@ -38,6 +54,7 @@ class TextStyles {
       fontWeight: FontWeight.w600,
       fontFamily: 'SFProRounded',
       color: AppColors.textOnScreen);
+
   static TextStyle font16Weight600 = TextStyle(
       fontSize: 16.sp,
       fontWeight: FontWeight.w600,

@@ -1,7 +1,9 @@
 import 'package:advanced_test/core/helpers/const.dart';
 import 'package:advanced_test/core/helpers/navigation_ext.dart';
+import 'package:advanced_test/core/helpers/static_data.dart';
 import 'package:advanced_test/core/theming/app_colors.dart';
 import 'package:advanced_test/core/theming/styles.dart';
+import 'package:advanced_test/domain/cart_item_module.dart';
 import 'package:advanced_test/domain/food_item_module.dart';
 import 'package:advanced_test/features/item/widgets/image_slider.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +11,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ItemDetails extends StatefulWidget {
   final FoodItemModule itemModule;
+  late CartItemModule item;
 
-  const ItemDetails({super.key, required this.itemModule});
+  ItemDetails({super.key, required this.itemModule}) {
+    item = CartItemModule(count: 0, item: itemModule);
+  }
 
   @override
   State<ItemDetails> createState() => _ItemDetailsState();
@@ -117,9 +122,10 @@ class _ItemDetailsState extends State<ItemDetails> {
                     padding: EdgeInsets.symmetric(horizontal: 42.w),
                     child: Center(
                       child: SizedBox(
-                        width: 1.sw-2*42.w,
+                        width: 1.sw - 2 * 42.w,
                         child: Text(
-                          maxLines: 2, // You can adjust the number of lines as needed
+                          maxLines: 2,
+                          // You can adjust the number of lines as needed
                           widget.itemModule.deliveryInfo,
                           style: TextStyles.font16Weight400
                               .copyWith(color: AppColors.gray),
@@ -145,9 +151,10 @@ class _ItemDetailsState extends State<ItemDetails> {
                     padding: EdgeInsets.symmetric(horizontal: 42.w),
                     child: Center(
                       child: SizedBox(
-                        width: 1.sw-2*42.w,
+                        width: 1.sw - 2 * 42.w,
                         child: Text(
-                          maxLines: 3, // You can adjust the number of lines as needed
+                          maxLines: 3,
+                          // You can adjust the number of lines as needed
                           widget.itemModule.returnPolicy,
                           style: TextStyles.font16Weight400
                               .copyWith(color: AppColors.gray),
@@ -159,18 +166,20 @@ class _ItemDetailsState extends State<ItemDetails> {
                     height: 56.h,
                   ),
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: .1.sw),
+                    padding: EdgeInsets.symmetric(horizontal: .1.sw),
                     child: SizedBox(
                       width: .8.sw,
                       height: 64.h,
                       child: ElevatedButton(
                         onPressed: () {
                           // Perform login logic here
+                          widget.item.count = widget.item.count + 1;
+                          cartItems[widget.itemModule.id] = widget.item;
 
                         },
                         style: ButtonStyle(
                             backgroundColor: MaterialStateColor.resolveWith(
-                                    (states) => AppColors.mainOrange)),
+                                (states) => AppColors.mainOrange)),
                         child: const Text(
                           'Add to cart',
                           style: TextStyle(
@@ -180,7 +189,6 @@ class _ItemDetailsState extends State<ItemDetails> {
                       ),
                     ),
                   ),
-
                 ],
               ))
         ],
