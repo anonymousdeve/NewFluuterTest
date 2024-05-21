@@ -5,6 +5,7 @@ import 'package:advanced_test/core/helpers/static_data.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
 class FoodItemModule {
+  int id = DateTime.now().millisecondsSinceEpoch;
   final String name;
   final List<String> photos;
   final String price;

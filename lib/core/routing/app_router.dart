@@ -1,5 +1,6 @@
 import 'package:advanced_test/core/route_transition/left_oute_transitions.dart';
 import 'package:advanced_test/core/routing/routes.dart';
+import 'package:advanced_test/domain/cart_item_module.dart';
 import 'package:advanced_test/domain/food_item_module.dart';
 import 'package:advanced_test/features/cart/cart_screen.dart';
 import 'package:advanced_test/features/home/home_screen.dart';
@@ -24,7 +25,8 @@ class AppRouter {
         return moveWithAnimations(const HomeScreen());
 
       case Routes.cartScreen:
-        return moveWithAnimations(const CartScreen());
+        return moveWithAnimations(
+            CartScreen(items: args is Map<int, CartItemModule> ? args :{}));
       // get argument as FoodItemModule
       case Routes.itemDetails:
         if (args is FoodItemModule) {

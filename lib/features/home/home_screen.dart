@@ -1,4 +1,5 @@
 import 'package:advanced_test/core/helpers/navigation_ext.dart';
+import 'package:advanced_test/core/helpers/static_data.dart';
 import 'package:advanced_test/core/routing/routes.dart';
 import 'package:advanced_test/core/theming/app_colors.dart';
 import 'package:advanced_test/domain/food_item_module.dart';
@@ -112,7 +113,8 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   GestureDetector(
                     onTap: () {
-                      context.pushNamed(Routes.cartScreen);
+                      context.pushNamed(Routes.cartScreen,
+                          arguments: cartItems);
                     },
                     child: SizedBox(
                       width: 32.w,
