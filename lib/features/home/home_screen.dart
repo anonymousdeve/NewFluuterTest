@@ -175,7 +175,8 @@ class _HomeScreenState extends State<HomeScreen>
             GestureDetector(
               onTap: () {
                 setState(() {
-                  selectedPos = 1;
+                  // selectedPos = 1;
+                  context.pushNamed(Routes.favoriteScreen);
                 });
               },
               child: AnimatedContainer(
